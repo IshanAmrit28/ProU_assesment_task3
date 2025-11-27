@@ -26,6 +26,7 @@ A full-stack web application for managing employees and their tasks. Built with 
 ## 🛠 Tech Stack
 
 ### Frontend
+
 - **React 18** - UI library
 - **TypeScript** - Type safety
 - **Vite** - Build tool and dev server
@@ -33,6 +34,7 @@ A full-stack web application for managing employees and their tasks. Built with 
 - **Lucide React** - Icon library
 
 ### Backend
+
 - **Node.js** - Runtime environment
 - **Express.js** - Web framework
 - **MongoDB** - Database (via Mongoose)
@@ -59,27 +61,32 @@ cd ProU_assesment_task3
 ### 2. Backend Setup
 
 1. Navigate to the backend directory:
+
 ```bash
 cd backend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Create a `.env` file in the `backend` directory:
+
 ```env
 MONGODB_URI=your_mongodb_connection_string
 PORT=5000
 ```
 
 4. Seed the database with initial data (optional but recommended):
+
 ```bash
 npm run seed
 ```
 
 5. Start the backend server:
+
 ```bash
 # Production mode
 npm start
@@ -93,16 +100,19 @@ The backend API will be running on `http://localhost:5000`
 ### 3. Frontend Setup
 
 1. Navigate to the frontend directory (from project root):
+
 ```bash
 cd frontend
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -110,6 +120,7 @@ npm run dev
 The frontend will be running on `http://localhost:5173` (or another port if 5173 is busy)
 
 4. Build for production:
+
 ```bash
 npm run build
 ```
@@ -161,11 +172,13 @@ ProU_assesment_task3/
 ## 📡 API Documentation
 
 ### Base URL
+
 ```
 http://localhost:5000/api
 ```
 
 ### Health Check
+
 - **GET** `/api/health`
   - Returns server status
 
@@ -178,6 +191,7 @@ http://localhost:5000/api
 ### Tasks
 
 - **GET** `/api/tasks`
+
   - Get all tasks
   - Query Parameters:
     - `status` - Filter by status (pending, in-progress, completed, cancelled)
@@ -186,9 +200,11 @@ http://localhost:5000/api
   - Example: `/api/tasks?status=completed&priority=high`
 
 - **GET** `/api/tasks/:id`
+
   - Get a single task by ID
 
 - **POST** `/api/tasks`
+
   - Create a new task
   - Request Body:
     ```json
@@ -203,6 +219,7 @@ http://localhost:5000/api
     ```
 
 - **PUT** `/api/tasks/:id`
+
   - Update an existing task
   - Request Body: Same as POST
 
@@ -243,6 +260,7 @@ http://localhost:5000/api
 ### Filtering Tasks
 
 Use the filter options in the Task List view to filter by:
+
 - Status
 - Employee
 - Priority
@@ -251,12 +269,14 @@ Use the filter options in the Task List view to filter by:
 
 ### Backend Issues
 
-- **Server won't start**: 
+- **Server won't start**:
+
   - Verify MongoDB URI is correct in `.env` file
   - Ensure MongoDB is accessible (check network/firewall settings)
   - Check if port 5000 is already in use
 
 - **Database connection errors**:
+
   - Verify your MongoDB connection string
   - Check if MongoDB Atlas IP whitelist includes your IP address
   - Ensure database credentials are correct
@@ -268,11 +288,13 @@ Use the filter options in the Task List view to filter by:
 ### Frontend Issues
 
 - **Can't connect to API**:
+
   - Ensure backend server is running on port 5000
   - Check browser console for CORS errors
   - Verify API base URL in `src/services/api.ts`
 
 - **Build errors**:
+
   - Run `npm install` to ensure all dependencies are installed
   - Check Node.js version compatibility
   - Clear `node_modules` and reinstall if needed
@@ -284,16 +306,37 @@ Use the filter options in the Task List view to filter by:
 ## 📝 Scripts
 
 ### Backend Scripts
+
 - `npm start` - Start production server
 - `npm run dev` - Start development server with auto-reload
 - `npm run seed` - Seed database with initial data
 
 ### Frontend Scripts
+
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 - `npm run typecheck` - Run TypeScript type checking
+
+## 📸 Project Screenshots
+
+### Dashboard
+
+![Dashboard Screenshot](./screenshots/dashboard.png)
+
+### Task List
+
+![Task List Screenshot](./screenshots/tasks.png)
+
+### Employees Page
+
+![Employees Screenshot](./screenshots/employees.png)
+
+## Adding Task
+
+![Adding tasks Screenshot](./screenshots/addTask.png)
+![Adding tasks Screenshot](./screenshots/addTask2.png)
 
 ## 📄 License
 
@@ -302,4 +345,3 @@ This project is part of a ProU assessment task.
 ---
 
 For detailed setup instructions, see [SETUP.md](./SETUP.md)
-
