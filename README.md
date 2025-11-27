@@ -295,11 +295,29 @@ Use the filter options in the Task List view to filter by:
 - `npm run lint` - Run ESLint
 - `npm run typecheck` - Run TypeScript type checking
 
+## 📸 Project Screenshots
+
+### Dashboard
+![Dashboard Screenshot](./screenshots/dashboard.png)
+
+### Task List
+![Task List Screenshot](./screenshots/tasks.png)
+
+### Employees Page
+![Employees Screenshot](./screenshots/employees.png)
+
+## Adding Task
+![Adding tasks Screenshot](./screenshots/addTask.png)
+![Adding tasks Screenshot](./screenshots/addTask2.png)
+
 ## 📄 License
 
 This project is part of a ProU assessment task.
 
+
 ---
 
+
 For detailed setup instructions, see [SETUP.md](./SETUP.md)
+
 
