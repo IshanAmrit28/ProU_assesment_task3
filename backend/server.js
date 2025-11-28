@@ -13,15 +13,27 @@ connectDB();
 const app = express();
 
 // CORS configuration
+// Read allowed origins from env (comma separated)
+const allowedOrigins = process.env.FRONTEND_URL
+  ? process.env.FRONTEND_URL.split(",").map(url => url.trim())
+  : ["http://localhost:5173"];
+
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || process.env.NODE_ENV === 'production' 
-    ? process.env.FRONTEND_URL?.split(',') || ['http://localhost:5173']
-    : '*',
+  origin: function (origin, callback) {
+    // Allow server-to-server / mobile apps (no origin)
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      console.log("❌ CORS blocked for:", origin);
+      return callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
 };
 
-// Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
